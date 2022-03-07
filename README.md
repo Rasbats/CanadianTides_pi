@@ -1,6 +1,7 @@
-# UKTides\_pi README
+# CanadianTides\_pi README
 
-A plugin for OpenCPN. Almost a simulator or is it a game?
+Tidal predictions for Canada, obtained using the CHS web api.
+The CHS license agreement applies (file: CHS License Agreement.txt).
 
 Icons made by Freepik(http://www.freepik.com) from Flaticon(https://www.flaticon.com/) and is licensed by Creative Commons BY 3.0 (http://creativecommons.org/licenses/by/3.0/)
 

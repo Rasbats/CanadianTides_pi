@@ -1,0 +1,42 @@
+Licence agreement
+Between
+Her Majesty the Queen in Right of Canada, as represented by the Minister of Fisheries, Oceans and the Canadian Coast Guard, minister responsible for the Canadian Hydrographic Service ("CHS")
+And
+The "User", being the person or company who executes this Licence Agreement on line or otherwise accesses to and/or uses the data
+(Collectively named “Parties”)
+Regarding the acquisition, access to and use of CHS data.
+PREAMBLE
+WHEREAS CHS collects data and organizes it under a format that enables the User to use the data (the “Data”);
+WHEREAS the carriage and use of nautical charts and publications by vessels is regulated by Division 6 of the Navigation Safety Regulations, 2020, made under the authority of the Canada Shipping Act, 2001;
+WHEREAS some of the required nautical publications must be CHS publications;
+WHEREAS the Data is not intended to be used in the purpose of navigation;
+WHEREAS CHS owns the copyrights on the Data;
+WHEREAS the Data is not intended to be used in the purpose of producing derivative products for commercial purposes, sale or profit under any form;
+AND WHEREAS CHS wishes to allow the User to use the Data under the conditions mentioned in this Licence Agreement,
+CHS AND THE USER AGREED TO THE FOLLOWING CONDITIONS:
+    1. The Preamble forms part of this Licence Agreement; 
+    2. This is a non-exclusive licence agreement between CHS and the User for the acquisition, access to and use of the CHS Data delivered via CHS’ website. 
+    3. The copyrights of CHS in the Data remain the property of CHS and shall not be sold, licensed, leased, assigned or given to a third party. 
+    4. The Data shall not be used in the purpose of producing derivative products for commercial purposes, for sale or profit under any form whatsoever. 
+    5. The Data shall not be used in the purpose of navigation; 
+    6. CHS does not guarantee that the software and technologies employed by the User are compatible with the Data and CHS website. 
+    7. It is the responsibility of the User to ensure compatibility. 
+    8. CHS does not provide any technical support to the User. 
+    9. The User shall regularly monitor CHS website for important information and notices relevant to this Licence Agreement. 
+    10. Where the User creates a derivative product from the Data (not for profit under any form whatsoever and not for navigation) the User shall include the following notice in a prominent location on such derivative product:
+       "This product is not to be used for navigation.
+       This product was made by or for the User [insert User's name or corporate name] and contains intellectual property (Data) of the Canadian Hydrographic Service of the Department of Fisheries and Oceans.
+       The copyrights in the Data are and remain the property of Her Majesty the Queen in Right of Canada and shall not be sold, licensed, leased, assigned or given to a third party.
+       The incorporation of the Data in this product does not constitute an endorsement or an approval of this product by the Canadian Hydrographic Service, the Department of Fisheries and Oceans or Her Majesty the Queen in Right of Canada”
+    11. When the Data is further defined by metadata, the User must take this metadata into consideration. 
+    12. The User acknowledges that the Data reflects the conditions observed at the time of collection, and that these conditions may change. 
+    13. The User shall have no recourse and no claim whatsoever against the CHS or any of its ministers, public servants and agents whether by way of any suit or action or other, for any loss, liability, damage or cost that the User may suffer or incur at any time, by reason of the User's possession, transformation and/or use of the Data. 
+    14. The Crown shall not be under any liability to the User or to any other party in any way whatsoever for destruction, damage, delay or any other matters of any nature whatsoever arising out of power outages, computer failure, war, rebellion, civil commotion, strikes, lock-outs, industrial disputes, fire explosion, earthquake, acts of God, flood, drought, bad weather, or the unavailability of services or Data. 
+    15. This Licence Agreement comes into effect at the date the User confirms acceptance by clicking “I Agree” or otherwise uses the Data and remains in effect until the date it is terminated unilaterally by CHS through a public notice posted on the CHS website. 
+    16. All restrictions on the use of the Data set out in this Licence Agreement survive termination. 
+    17. The User shall destroy all the User's copies of the Data within 15 days of termination. 
+    18. The Parties shall attempt to resolve any disputes regarding the interpretation or implementation of this Licence Agreement first by discussion, consultation, negotiation, or mediation, and if those are unsuccessful, by arbitration in accordance with the provisions of the federal Commercial Arbitration Act as amended from time to time, prior to filing any legal action in court. 
+    19. The law applicable to this Licence Agreement is the law applicable in the Province of Ontario, Canada. 
+    20. If legal actions are required, the forum shall be the Federal Court of Canada. 
+ 
+
