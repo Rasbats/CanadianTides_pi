@@ -142,7 +142,7 @@ int CanadianTides_pi::Init(void)
 	wxMenu dummy_menu;
 	m_position_menu_id = AddCanvasContextMenuItem
 
-	(new wxMenuItem(&dummy_menu, -1, _("Select UK Tidal Station")), this);
+	(new wxMenuItem(&dummy_menu, -1, _("Select Canadian Tidal Station")), this);
 	SetCanvasContextMenuItemViz(m_position_menu_id, false);
 
      m_pDialog = NULL;	 
