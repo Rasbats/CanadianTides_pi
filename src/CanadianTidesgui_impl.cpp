@@ -408,7 +408,7 @@ void Dlg::OnDownload(wxCommandEvent& event) {
 	wxString urlString = "https://api-iwls.dfo-mpo.gc.ca/api/v1/stations?chs-region-code=" + choiceRegion + "&&time-series-code=wlp-hilo";
 	wxURI url(urlString);
 
-	wxString tmp_file = "c:/old/can_stations.txt";
+	wxString tmp_file = wxFileName::CreateTempFileName("CHS");
 
 	_OCPN_DLStatus ret = OCPN_downloadFile(url.BuildURI(), tmp_file,
 		"CanadianTides", "", wxNullBitmap, this,
@@ -474,49 +474,6 @@ void Dlg::OnDownload(wxCommandEvent& event) {
 		   outPort.coordLon = myLon;
 		   myports.push_back(outPort);
     }
-	
-	
-	
-/*
-int i = 0;
-
-	for (int j = 0; j < i; j++) {
-
-		wxMessageBox("here");
-
-		string myID = value[j].asString();
-		wxString myn(myID.c_str(), wxConvUTF8);
-		wxMessageBox(myn);
-
-		Json::Value  features = value["features"][j];
-
-		if (!features.isMember("properties")) {
-			// Originator
-			wxLogMessage(_("No properties found in message"));
-		}
-
-		string name = features["properties"]["officialName"].asString();
-		wxString myname(name.c_str(), wxConvUTF8);
-		outPort.Name = myname;
-		
-		string id = features["properties"]["Id"].asString();
-		wxString myId(id.c_str(), wxConvUTF8);
-		outPort.Id = myId;
-
-		string lon = features["geometry"]["coordinates"][0].asString();
-		s_lon = lon.c_str(), wxConvUTF8;
-		string lat = features["geometry"]["coordinates"][1].asString();
-		s_lat = lat.c_str(), wxConvUTF8;
-
-		double myLat, myLon;
-		s_lat.ToDouble(&myLat);
-		s_lon.ToDouble(&myLon);
-
-		outPort.coordLat = myLat;
-		outPort.coordLon = myLon;
-
-		myports.push_back(outPort);
-	}*/
 
 	SetCanvasContextMenuItemViz(plugin->m_position_menu_id, true);
 	fileData.Close();
@@ -692,11 +649,9 @@ void Dlg::getHWLW(string id)
 	string toDate = "&&to=";
 
 	wxString urlString = "https://api-iwls.dfo-mpo.gc.ca/api/v1/stations/" + id + tidalevents + code + fromDate + snow + toDate + snowplus;
-	//m_stUKDownloadInfo->SetLabel(urlString);
-	//return;
 	wxURI url(urlString);
 
-	wxString tmp_file = "c:/old/hilo.txt";
+	wxString tmp_file = wxFileName::CreateTempFileName("CHS");
 
 	_OCPN_DLStatus ret = OCPN_downloadFile(url.BuildURI(), tmp_file,
 		"", "", wxNullBitmap, this, OCPN_DLDS_AUTO_CLOSE,
@@ -748,52 +703,6 @@ void Dlg::getHWLW(string id)
 
     }
 	
-	
-/*
-
-	if (!root2.isArray()) {
-		wxLogMessage(error);
-		return;
-	}
-	else {
-
-		int i = root2.size();
-
-		for (int j = 0; j < i; j++) {
-
-			string type = root2[j]["EventType"].asString();
-			if (type == "HighWater") type = "HW";
-			else if (type == "LowWater") type = "LW";
-			wxString mytype(type.c_str(), wxConvUTF8);
-			outTidalEvent.EventType = mytype;
-
-			Json::Value  jdt = root2[j];
-
-			if (jdt.isMember("DateTime")) {
-				string datetime = root2[j]["DateTime"].asString();
-				wxString mydatetime(datetime.c_str(), wxConvUTF8);
-				outTidalEvent.DateTime = ProcessDate(mydatetime);
-			}
-			else {
-				outTidalEvent.DateTime = "N/A";
-			}
-
-			if (jdt.isMember("Height")) {
-				double height = root2[j]["Height"].asDouble();
-				wxString myheight(wxString::Format("%4.2f", height));
-				outTidalEvent.Height = myheight;
-			}
-			else {
-				outTidalEvent.Height = "N/A";
-			}
-
-			myevents.push_back(outTidalEvent);
-
-		}
-	}
-
-	root2.clear();
-*/
 	for (std::list<myPort>::iterator it = mySavedPorts.begin(); it != mySavedPorts.end();) {
 
 		if ((*it).Id == id) {
@@ -837,7 +746,7 @@ void Dlg::OnShow(void)
 
 
 		if (myevents.empty()) {
-			wxMessageBox(_("No tidal data found. Please use right click to select the UK tidal station"));
+			wxMessageBox(_("No tidal data found. Please use right click to select the Canadian tidal station"));
 			return;
 		}
 
@@ -873,7 +782,7 @@ void Dlg::OnShow(void)
 void Dlg::OnShowSavedPortTides(wxString thisPortId) {
 	
 	if (mySavedPorts.empty()) {
-		wxMessageBox(_("No tidal data found. Please download the locations \n and use right click to select the UK tidal station"));
+		wxMessageBox(_("No tidal data found. Please download the locations \n and use right click to select the Canadian tidal station"));
 		return;
 	}
 
@@ -1217,7 +1126,7 @@ list<myPort>Dlg::LoadTidalEventsFromXml()
 	SetTitle(_("CA Tidal Events"));
 
 	if (!doc.LoadFile(filename.mb_str())) {
-		wxMessageBox(_("No UK tide locations available"));
+		wxMessageBox(_("No Canadian tide locations available"));
 		return myEmptyPorts;
 	}
 	else {

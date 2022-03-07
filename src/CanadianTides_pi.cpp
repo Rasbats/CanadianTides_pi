@@ -222,7 +222,7 @@ wxString CanadianTides_pi::GetShortDescription()
 
 wxString CanadianTides_pi::GetLongDescription()
 {
-      return _("Downloads UKHO Tidal Data for UK ports");
+      return _("Downloads CHS Tidal Data for Canadian tidal stations");
 }
 
 int CanadianTides_pi::GetToolbarToolCount(void)
