@@ -1,0 +1,209 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: opencpn\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-05 21:09+0100\n"
+"PO-Revision-Date: 2019-07-06 17:07\n"
+"Last-Translator: Pavel Kalian (nohal)\n"
+"Language-Team: Catalan\n"
+"Language: ca_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: opencpn\n"
+"X-Crowdin-Language: ca\n"
+"X-Crowdin-File: /plugins/UKTides_pi/po/UKTides_pi.pot\n"
+
+#: src/UKTides_pi.cpp:84
+msgid "    UKTides panel icon has NOT been loaded"
+msgstr ""
+
+#: src/UKTides_pi.cpp:118 src/UKTides_pi.cpp:121 src/UKTides_pi.cpp:194
+#: src/UKTides_pi.cpp:200 src/UKTidesgui_impl.cpp:738
+msgid "UKTides"
+msgstr ""
+
+#: src/UKTides_pi.cpp:128
+msgid "Select UK Tidal Station"
+msgstr ""
+
+#: src/UKTides_pi.cpp:205
+msgid "Downloads UKHO Tidal Data for UK ports"
+msgstr ""
+
+#: src/UKTidesgui.cpp:21
+msgid "Download"
+msgstr ""
+
+#: src/UKTidesgui.cpp:25
+msgid "Saved"
+msgstr ""
+
+#: src/UKTidesgui.cpp:28
+msgid "Locations"
+msgstr ""
+
+#: src/UKTidesgui.cpp:31
+msgid "Guide"
+msgstr ""
+
+#: src/UKTidesgui.cpp:34
+msgid "Help"
+msgstr ""
+
+#: src/UKTidesgui.cpp:42
+msgid "Important"
+msgstr ""
+
+#: src/UKTidesgui.cpp:44
+msgid "All times UTC"
+msgstr ""
+
+#: src/UKTidesgui.cpp:54
+msgid "Port Locations"
+msgstr ""
+
+#: src/UKTidesgui.cpp:56
+msgid " Download  "
+msgstr ""
+
+#: src/UKTidesgui.cpp:59
+msgid "Status:"
+msgstr ""
+
+#: src/UKTidesgui.cpp:69
+msgid "Days ahead: "
+msgstr ""
+
+#: src/UKTidesgui.cpp:73
+msgid "1"
+msgstr ""
+
+#: src/UKTidesgui.cpp:73
+msgid "2"
+msgstr ""
+
+#: src/UKTidesgui.cpp:73
+msgid "3"
+msgstr ""
+
+#: src/UKTidesgui.cpp:73
+msgid "4"
+msgstr ""
+
+#: src/UKTidesgui.cpp:73
+msgid "5"
+msgstr ""
+
+#: src/UKTidesgui.cpp:73
+msgid "6"
+msgstr ""
+
+#: src/UKTidesgui.cpp:73
+msgid "7"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:128
+msgid "Aborted"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:133
+msgid "Download failed.\n\n"
+"Are you connected to the Internet?"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:135
+msgid "Failed"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:140
+msgid "Success"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:152
+msgid "No tidal stations found"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:161
+msgid "No features found in message"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:173
+msgid "No properties found in message"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:232
+msgid "Select the Location"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:425
+msgid "Tides"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:426 src/UKTidesgui_impl.cpp:486
+msgid "      (Times are UTC)  "
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:426 src/UKTidesgui_impl.cpp:486
+msgid " (Height in metres)"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:435
+msgid "No tidal data found. Please use right click to select the UK tidal station"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:469
+msgid "No tidal data found. Please download the locations \n"
+" and use right click to select the UK tidal station"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:473
+msgid "Locations Saved"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:560
+msgid "No active tidal stations found. Please download the locations"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:584 src/UKTidesgui_impl.cpp:620
+msgid "Port not found"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:598
+msgid "No tidal stations found. Please download locations when online"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:738
+msgid "Failed to save xml file: "
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:757
+msgid "Tidal Events"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:760
+msgid "No UK tide locations available"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:765
+msgid "Invalid xml file"
+msgstr ""
+
+#: src/UKTidesgui_impl.cpp:860 src/tidetable.cpp:139
+msgid "OK"
+msgstr ""
+
+#: src/tidetable.cpp:151
+msgid "Date/Time"
+msgstr ""
+
+#: src/tidetable.cpp:152
+msgid "HW/LW"
+msgstr ""
+
+#: src/tidetable.cpp:153
+msgid "Height"
+msgstr ""
+
