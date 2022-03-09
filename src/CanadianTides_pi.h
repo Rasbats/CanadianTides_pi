@@ -54,7 +54,7 @@ class Dlg;
 
 #define CanadianTides_TOOL_POSITION    -1          // Request default positioning of toolbar tool
 
-class CanadianTides_pi : public opencpn_plugin_116
+class CanadianTides_pi : public opencpn_plugin_117
 {
 public:
       CanadianTides_pi(void *ppimgr);
