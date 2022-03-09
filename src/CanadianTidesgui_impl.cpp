@@ -408,9 +408,12 @@ void Dlg::OnDownload(wxCommandEvent& event) {
 	wxString urlString = "https://api-iwls.dfo-mpo.gc.ca/api/v1/stations?chs-region-code=" + choiceRegion + "&&time-series-code=wlp-hilo";
 	wxURI url(urlString);
 
-	wxString tmp_path = StandardPath();
-	wxString s = wxFileName::GetPathSeparator();
-	wxString tmp_file = tmp_path + s + "temp.txt";
+	
+	wxFileName fn;
+    fn.SetFullName("temp.txt");
+	wxFileName tfn = wxFileName::CreateTempFileName(fn.GetFullPath());
+    wxString tmp_file = tfn.GetFullPath();
+
 	wxMessageBox(tmp_file);
 
 	_OCPN_DLStatus ret = OCPN_downloadFile(url.BuildURI(), tmp_file,
@@ -654,9 +657,11 @@ void Dlg::getHWLW(string id)
 	wxString urlString = "https://api-iwls.dfo-mpo.gc.ca/api/v1/stations/" + id + tidalevents + code + fromDate + snow + toDate + snowplus;
 	wxURI url(urlString);
 
-	wxString tmp_path = StandardPath();
-	wxString s = wxFileName::GetPathSeparator();
-	wxString tmp_file = tmp_path + s + "temp.txt";
+	wxFileName fn;
+    fn.SetFullName("temp.txt");
+	wxFileName tfn = wxFileName::CreateTempFileName(fn.GetFullPath());
+    wxString tmp_file = tfn.GetFullPath();
+
 	wxMessageBox(tmp_file);
 
 	_OCPN_DLStatus ret = OCPN_downloadFile(url.BuildURI(), tmp_file,
