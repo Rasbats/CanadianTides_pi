@@ -442,17 +442,15 @@ void Dlg::OnDownload(wxCommandEvent& event) {
 	fileData.Open(tmp_file, wxT("r"));
 	fileData.ReadAll(&message_body);
 
-	Json::CharReaderBuilder builder;
-	Json::CharReader* reader = builder.newCharReader();
+	//Json::CharReaderBuilder builder;
+	Json::Reader reader;
 
 	wxString message_id;
 	
 	Json::Value value;
 	string errors;
 
-	bool parsingSuccessful = reader->parse(message_body.c_str(),
-		message_body.c_str() + message_body.size(), &value, &errors);
-	delete reader;
+	bool parsingSuccessful = reader.parse((std::string)message_body, value);
 	
 	wxString error = _("No tidal stations found");
 
@@ -671,9 +669,6 @@ void Dlg::getHWLW(string id)
 	wxFFile fileData;
 	fileData.Open(tmp_file, wxT("r"));
 	fileData.ReadAll(&myjson);
-
-	Json::CharReaderBuilder builder;
-	Json::CharReader* reader = builder.newCharReader();
 
 	// construct the JSON root object
 	Json::Value  root2;
