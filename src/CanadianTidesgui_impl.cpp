@@ -409,6 +409,7 @@ void Dlg::OnDownload(wxCommandEvent& event) {
 	wxURI url(urlString);
 
 	wxString tmp_file = wxFileName::CreateTempFileName(_T("/tmp/"));
+	wxMessageBox(tmp_file);
 
 	_OCPN_DLStatus ret = OCPN_downloadFile(url.BuildURI(), tmp_file,
 		"CanadianTides", "", wxNullBitmap, this,
@@ -652,6 +653,7 @@ void Dlg::getHWLW(string id)
 	wxURI url(urlString);
 
 	wxString tmp_file = wxFileName::CreateTempFileName(_T("/tmp/"));
+	wxMessageBox(tmp_file);
 
 	_OCPN_DLStatus ret = OCPN_downloadFile(url.BuildURI(), tmp_file,
 		"", "", wxNullBitmap, this, OCPN_DLDS_AUTO_CLOSE,
