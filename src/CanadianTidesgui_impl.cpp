@@ -417,8 +417,7 @@ void Dlg::OnDownload(wxCommandEvent& event) {
 	wxMessageBox(tmp_file);
 
 	_OCPN_DLStatus ret = OCPN_downloadFile(url.BuildURI(), tmp_file,
-		"CanadianTides", "", wxNullBitmap, this,
-		OCPN_DLDS_ELAPSED_TIME | OCPN_DLDS_ESTIMATED_TIME | OCPN_DLDS_REMAINING_TIME | OCPN_DLDS_SPEED | OCPN_DLDS_SIZE | OCPN_DLDS_CAN_PAUSE | OCPN_DLDS_CAN_ABORT | OCPN_DLDS_AUTO_CLOSE,
+		"CanadianTides", "", wxNullBitmap, this, OCPN_DLDS_AUTO_CLOSE,
 		10);
 
 	if (ret == OCPN_DL_ABORTED) {
