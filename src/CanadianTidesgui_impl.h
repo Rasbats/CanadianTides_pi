@@ -38,22 +38,36 @@
 #include "tidetable.h"
 #include "tinyxml.h"
 #include "wx/stdpaths.h"
-#include "wx/msgdlg.h"
 
-#include "json/reader.h"
-#include "json/writer.h"
-
-#include "ocpn_plugin.h"
-#include "pidc.h"
-
-#include "TexFont.h"
-
-
-#include <map>
 #include <list>
 #include <vector>
+#include "wx/socket.h"
 
-#include "wx/defs.h"
+#if defined (__WXMSW__)
+    #include <winsock.h>
+#endif
+
+#if defined (__APPLE__) && defined (__MACH__)
+    #include <sys/types.h>
+    #include <sys/socket.h>
+#endif
+
+#include <wx/timer.h>
+#include <wx/ffile.h>
+#include <wx/filefn.h>
+#include <wx/filename.h>
+#include <wx/url.h>
+#include "json/reader.h"
+#include "json/writer.h"
+#include "ocpn_plugin.h"
+#include <wx/time.h>
+#include "wx/dir.h"
+#include "wx/busyinfo.h"
+#include "wx/sstream.h"
+#include "wx/thread.h"
+#include <wx/progdlg.h>
+#include <wx/utils.h>
+
 
 #ifdef __OCPN__ANDROID__
 #include <qopengl.h>
