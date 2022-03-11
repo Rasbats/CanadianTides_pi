@@ -1267,14 +1267,11 @@ GetTidalEventDialog::GetTidalEventDialog(wxWindow * parent, wxWindowID id, const
 	itemBoxSizer1->Add(m_pListSizer, 2, wxEXPAND | wxALL, 1);
 
 	wxBoxSizer* itemBoxSizerBottom = new wxBoxSizer(wxHORIZONTAL);
-	itemBoxSizer1->Add(itemBoxSizerBottom, 0, wxALIGN_LEFT | wxALL | wxEXPAND, 5);
-
-	wxBoxSizer* itemBoxSizer16 = new wxBoxSizer(wxHORIZONTAL);
-	itemBoxSizerBottom->Add(itemBoxSizer16, 0, wxALIGN_RIGHT | wxALL, 3);
+	itemBoxSizer1->Add(itemBoxSizerBottom, 0, wxALIGN_RIGHT | wxALL, 5);
 
 	m_OKButton = new wxButton(this, wxID_OK, _("OK"), wxDefaultPosition,
 		wxDefaultSize, 0);
-	itemBoxSizer16->Add(m_OKButton, 0, wxALIGN_RIGHT | wxALIGN_CENTER_VERTICAL | wxALL, 1);
+	itemBoxSizerBottom->Add(m_OKButton, 0, wxALIGN_CENTER_VERTICAL | wxALL, 1);
 	m_OKButton->SetDefault();
 
 

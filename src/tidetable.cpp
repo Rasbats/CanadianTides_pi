@@ -133,26 +133,23 @@ void TideTable::CreateControls()
 	m_pListSizer->Add(m_wpList, 1, wxEXPAND | wxALL, 6);
 
 	wxBoxSizer* itemBoxSizerBottom = new wxBoxSizer(wxHORIZONTAL);
-	itemBoxSizer1->Add(itemBoxSizerBottom, 0, wxALIGN_LEFT | wxALL | wxEXPAND, 5);
+	itemBoxSizer1->Add(itemBoxSizerBottom, 0, wxALL | wxALIGN_RIGHT, 5);
              
-      wxBoxSizer* itemBoxSizer16 = new wxBoxSizer( wxHORIZONTAL );
-      itemBoxSizerBottom->Add( itemBoxSizer16, 0, wxALIGN_RIGHT | wxALL, 3 );
-      
       m_OKButton = new wxButton( this, ID_ROUTEPROP_OK, _("OK"), wxDefaultPosition,
       wxDefaultSize, 0 );
 
-      itemBoxSizer16->Add( m_OKButton, 0, wxALIGN_LEFT | wxALIGN_CENTER_VERTICAL | wxALL, 1);
+      itemBoxSizerBottom->Add( m_OKButton, 0, wxALIGN_CENTER_VERTICAL | wxALL, 1);
       //m_OKButton->SetDefault();
 
 	  m_bDelete = new wxButton(this, ID_ROUTEPROP_DELETE, _("Delete"), wxDefaultPosition,
       wxDefaultSize, 0);
 
-	  itemBoxSizer16->Add(m_bDelete, 0, wxALIGN_RIGHT | wxALIGN_CENTER_VERTICAL | wxALL, 1);
+	  itemBoxSizerBottom->Add(m_bDelete, 0, wxALIGN_CENTER_VERTICAL | wxALL, 1);
 
 	  m_bDeleteAll = new wxButton(this, ID_ROUTEPROP_DELETE_ALL, _("Delete ALL"), wxDefaultPosition,
 		  wxDefaultSize, 0);
 
-	  itemBoxSizer16->Add(m_bDeleteAll, 0, wxALIGN_RIGHT | wxALIGN_CENTER_VERTICAL | wxALL, 1);
+	  itemBoxSizerBottom->Add(m_bDeleteAll, 0, wxALIGN_CENTER_VERTICAL | wxALL, 1);
 
       //      To correct a bug in MSW commctl32, we need to catch column width drag events, and do a Refresh()
       //      Otherwise, the column heading disappear.....

@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version Oct 26 2018)
+// C++ code generated with wxFormBuilder (version 3.10.1-0-g8feb16b)
 // http://www.wxformbuilder.org/
 //
 // PLEASE DO *NOT* EDIT THIS FILE!
@@ -20,10 +20,10 @@
 #include <wx/statbox.h>
 #include <wx/choice.h>
 #include <wx/statline.h>
+#include <wx/button.h>
 #include <wx/bitmap.h>
 #include <wx/image.h>
 #include <wx/icon.h>
-#include <wx/button.h>
 #include <wx/frame.h>
 
 ///////////////////////////////////////////////////////////////////////////
@@ -43,7 +43,7 @@ class DlgDef : public wxFrame
 		wxChoice* m_choice31;
 		wxStaticLine* m_staticline2;
 
-		// Virtual event handlers, overide them in your derived class
+		// Virtual event handlers, override them in your derived class
 		virtual void OnClose( wxCloseEvent& event ) { event.Skip(); }
 		virtual void OnDownload( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnGetSavedTides( wxCommandEvent& event ) { event.Skip(); }
