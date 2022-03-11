@@ -26,7 +26,7 @@ DlgDef::DlgDef( wxWindow* parent, wxWindowID id, const wxString& title, const wx
 	m_stTimeZone->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxT("Arial") ) );
 	m_stTimeZone->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_WINDOWTEXT ) );
 
-	sbSizerDateTime->Add( m_stTimeZone, 0, wxALIGN_CENTER_VERTICAL|wxALL|wxEXPAND, 5 );
+	sbSizerDateTime->Add( m_stTimeZone, 0, wxALL|wxEXPAND, 5 );
 
 
 	bSizerMain->Add( sbSizerDateTime, 0, wxEXPAND, 5 );
