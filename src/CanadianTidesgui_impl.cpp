@@ -124,7 +124,7 @@ Dlg::Dlg(CanadianTides_pi &_CanadianTides_pi, wxWindow* parent)
 #endif
 
 	LoadTidalEventsFromXml();
-	RemoveOldDownloads();
+	//RemoveOldDownloads();
 
 	b_clearAllIcons = true;
 	b_clearSavedIcons = true;
