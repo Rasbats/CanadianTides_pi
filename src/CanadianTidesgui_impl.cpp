@@ -981,7 +981,7 @@ wxString Dlg::StandardPath()
     wxString s = wxFileName::GetPathSeparator();
     wxString stdPath  = *GetpPrivateApplicationDataLocation();
 
-    stdPath += _T("plugins") + s + _T("CanadianTides_pi") + s + "data";
+    stdPath += s + _T("plugins") + s + _T("CanadianTides_pi") + s + "data";
 
     if (!wxDirExists(stdPath))
       wxMkdir(stdPath);
@@ -1220,6 +1220,7 @@ void Dlg::RemoveSavedPort(wxString myStation) {
 
 	if (mySavedPorts.size() == 1) {
 		mySavedPorts.clear();
+		SaveTidalEventsToXml(mySavedPorts);
 	}
 	else {
 
