@@ -124,7 +124,7 @@ Dlg::Dlg(CanadianTides_pi &_CanadianTides_pi, wxWindow* parent)
 #endif
 
 	LoadTidalEventsFromXml();
-	//RemoveOldDownloads();
+	RemoveOldDownloads();
 
 	b_clearAllIcons = true;
 	b_clearSavedIcons = true;
@@ -1220,7 +1220,6 @@ void Dlg::RemoveSavedPort(wxString myStation) {
 
 	if (mySavedPorts.size() == 1) {
 		mySavedPorts.clear();
-		SaveTidalEventsToXml(mySavedPorts);
 	}
 	else {
 
@@ -1230,15 +1229,15 @@ void Dlg::RemoveSavedPort(wxString myStation) {
 			if ((*it).Name == myStation) {
 					
 				mySavedPorts.erase(it);
-				SaveTidalEventsToXml(mySavedPorts);
 				break;
 			}
 			else {
 				it++;
 			}
-		}
+		}				
+		
 	}
-	
+	SaveTidalEventsToXml(mySavedPorts);
 	GetParent()->Refresh();
 }
 

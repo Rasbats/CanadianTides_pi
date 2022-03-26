@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version 3.10.1-0-g8feb16b)
+// C++ code generated with wxFormBuilder (version 3.10.1-0-g8feb16b3)
 // http://www.wxformbuilder.org/
 //
 // PLEASE DO *NOT* EDIT THIS FILE!
@@ -65,7 +65,7 @@ DlgDef::DlgDef( wxWindow* parent, wxWindowID id, const wxString& title, const wx
 	int m_choice31NChoices = sizeof( m_choice31Choices ) / sizeof( wxString );
 	m_choice31 = new wxChoice( sbSizerFolder->GetStaticBox(), wxID_ANY, wxDefaultPosition, wxDefaultSize, m_choice31NChoices, m_choice31Choices, 0 );
 	m_choice31->SetSelection( 0 );
-	m_choice31->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_WINDOW ) );
+	m_choice31->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_WINDOWTEXT ) );
 
 	bSizer3->Add( m_choice31, 0, wxALL, 5 );
 
