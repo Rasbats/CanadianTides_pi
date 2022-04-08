@@ -51,3 +51,4 @@ This is to build the installer tarball. Use _--target pkg_ to build the
 legacy NSIS installer. The build requires access to a specific wxWidgets
 3.1.2 build, see the appveyour.yml file for details.
 
+
