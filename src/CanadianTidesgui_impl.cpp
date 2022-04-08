@@ -124,7 +124,6 @@ Dlg::Dlg(CanadianTides_pi &_CanadianTides_pi, wxWindow* parent)
 #endif
 
 	LoadTidalEventsFromXml();
-	RemoveOldDownloads();
 
 	b_clearAllIcons = true;
 	b_clearSavedIcons = true;
@@ -1183,34 +1182,6 @@ wxString Dlg::GetDateStringNow() {
 
 }
 
-void Dlg::RemoveOldDownloads( ) {
-	
-	if (mySavedPorts.size() == 0) {				
-		return;
-	}
-	
-	wxDateTime dtn, ddt;
-	wxString sdt, sddt;
-	wxTimeSpan DaySpan;
-	DaySpan = wxTimeSpan::Days(7);
-
-	dtn = wxDateTime::Now();
-
-	for (std::list<myPort>::iterator it = mySavedPorts.begin(); it != mySavedPorts.end(); it++) {
-		sddt = (*it).DownloadDate;
-		ddt.ParseDateTime(sddt);
-		ddt.Add(DaySpan);
-
-		if (dtn > ddt) {
-			mySavedPorts.erase((it));
-		}
-	}
-	
-	SaveTidalEventsToXml(mySavedPorts);
-	GetParent()->Refresh();
-
-}
-
 void Dlg::RemoveSavedPort(wxString myStation) {
 		
 	if (mySavedPorts.empty()) {
@@ -1221,13 +1192,9 @@ void Dlg::RemoveSavedPort(wxString myStation) {
 	if (mySavedPorts.size() == 1) {
 		mySavedPorts.clear();
 	}
-	else {
-
-		
+	else {		
 		for (std::list<myPort>::iterator it = mySavedPorts.begin(); it != mySavedPorts.end();) {
-
 			if ((*it).Name == myStation) {
-					
 				mySavedPorts.erase(it);
 				break;
 			}

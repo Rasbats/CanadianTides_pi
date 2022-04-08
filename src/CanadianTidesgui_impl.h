@@ -169,9 +169,7 @@ private:
 	list<myPort> LoadTidalEventsFromXml();
 
 	double AttributeDouble(TiXmlElement *e, const char *name, double def);
-	wxString GetDateStringNow();
-	void RemoveOldDownloads();
-	
+	wxString GetDateStringNow();	
 
 	void getHWLW(string id);
 	wxString getPortId(double m_lat, double m_lon);
