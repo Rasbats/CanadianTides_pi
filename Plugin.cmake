@@ -50,8 +50,6 @@ set(PKG_HOMEPAGE https://github.com/Rasbats/CanadianTides_pi)
 set(PKG_INFO_URL https://opencpn.org/OpenCPN/plugins/CanadianTides.html)
 
 set(SRC
-    src/bbox.cpp
-    src/bbox.h		
     src/CanadianTides_pi.h
     src/CanadianTides_pi.cpp
     src/icons.h
