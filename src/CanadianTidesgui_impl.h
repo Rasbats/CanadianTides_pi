@@ -39,6 +39,7 @@
 #include "tinyxml.h"
 #include "wx/stdpaths.h"
 #include "wx/msgdlg.h"
+#include <wx/gdicmn.h>
 
 #include "json/reader.h"
 #include "json/writer.h"

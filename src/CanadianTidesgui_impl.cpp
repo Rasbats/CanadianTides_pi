@@ -256,11 +256,12 @@ void Dlg::DrawAllStationIcons(PlugIn_ViewPort *BBox, bool bRebuildSelList,
 		int pixxc, pixyc;
 		wxPoint cpoint;
 
-		wxBoundingBox LLBBox( BBox->lon_min, BBox->lat_min , BBox->lon_max, BBox->lat_max );
-		if (LLBBox.PointInBox(plon, plat, 0)) {
-			GetCanvasPixLL(BBox, &cpoint, plat, plon);
-			pixxc = cpoint.x;
-			pixyc = cpoint.y;
+		GetCanvasPixLL(BBox, &cpoint, plat, plon);
+                pixxc = cpoint.x;
+                pixyc = cpoint.y;
+
+		wxRect myRect = BBox->rv_rect;
+        if( myRect.Contains(cpoint.x, cpoint.y)){
 
 #ifdef __OCPN__ANDROID__
 
@@ -315,12 +316,13 @@ void Dlg::DrawAllSavedStationIcons(PlugIn_ViewPort *BBox, bool bRebuildSelList,
 		int pixxc, pixyc;
 		wxPoint cpoint;
 
-		wxBoundingBox LLBBox( BBox->lon_min, BBox->lat_min , BBox->lon_max, BBox->lat_max );
-		if (LLBBox.PointInBox(plon, plat, 0)) {
+		GetCanvasPixLL(BBox, &cpoint, plat, plon);
+		pixxc = cpoint.x;
+		pixyc = cpoint.y;
+				
+		wxRect myRect = BBox->rv_rect;
+        if( myRect.Contains(cpoint.x, cpoint.y)){
 
-			GetCanvasPixLL(BBox, &cpoint, plat, plon);
-			pixxc = cpoint.x;
-			pixyc = cpoint.y;
 
 #ifdef __OCPN__ANDROID__
 
