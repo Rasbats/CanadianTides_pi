@@ -39,7 +39,6 @@
 #include <wx/graphics.h>
 #include "qtstylesheet.h"
 
-#include "bbox.h"
 #include "pidc.h"
 
 #ifdef __OCPN__ANDROID__
