@@ -34,7 +34,7 @@ option(PLUGIN_USE_SVG "Use SVG graphics" ON)
 # -------  Plugin setup --------
 #
 set(PKG_NAME CanadianTides_pi)
-set(PKG_VERSION  0.7.0)
+set(PKG_VERSION  0.8.0)
 set(PKG_PRERELEASE "")  # Empty, or a tag like 'beta'
 
 set(DISPLAY_NAME CanadianTides)    # Dialogs, installer artifacts, ...
@@ -58,13 +58,13 @@ set(SRC
     src/CanadianTidesgui.cpp
     src/CanadianTidesgui_impl.cpp
     src/CanadianTidesgui_impl.h
-	src/NavFunc.cpp
-	src/NavFunc.h
-	src/tidetable.cpp
-	src/tidetable.h
-	src/gl_private.h
-	src/pidc.cpp
-	src/pidc.h
+    src/NavFunc.cpp
+    src/NavFunc.h
+    src/tidetable.cpp
+    src/tidetable.h
+    src/gl_private.h
+    src/pidc.cpp
+    src/pidc.h
 
 )
 
@@ -78,12 +78,12 @@ macro(late_init)
   endif ()
 
   add_definitions(-DocpnUSE_GL)
-  add_definitions(-DMAKING_PLUGIN)  
+  add_definitions(-DMAKING_PLUGIN)
 
   if (QT_ANDROID)
     add_definitions(-DUSE_ANDROID_GLES2)
   endif ()
-  
+
 endmacro ()
 macro(add_plugin_libraries)
   # Add libraries required by this plugin
