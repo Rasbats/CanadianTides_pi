@@ -34,7 +34,7 @@ option(PLUGIN_USE_SVG "Use SVG graphics" ON)
 # -------  Plugin setup --------
 #
 set(PKG_NAME CanadianTides_pi)
-set(PKG_VERSION  0.8.0)
+set(PKG_VERSION  0.9.0)
 set(PKG_PRERELEASE "")  # Empty, or a tag like 'beta'
 
 set(DISPLAY_NAME CanadianTides)    # Dialogs, installer artifacts, ...
@@ -62,23 +62,16 @@ set(SRC
     src/NavFunc.h
     src/tidetable.cpp
     src/tidetable.h
-    src/gl_private.h
-    src/pidc.cpp
-    src/pidc.h
-
+    src/gl_private.h    
 )
 
 set(PKG_API_LIB api-17)  #  A directory in libs/ e. g., api-17 or api-16
 
 macro(late_init)
   # Perform initialization after the PACKAGE_NAME library, compilers
-  # and ocpn::api is available.
-  if (PLUGIN_USE_SVG)
-    target_compile_definitions(${PACKAGE_NAME} PUBLIC PLUGIN_USE_SVG)
-  endif ()
+  # and ocpn::api is available.  
 
   add_definitions(-DocpnUSE_GL)
-  add_definitions(-DMAKING_PLUGIN)
 
   if (QT_ANDROID)
     add_definitions(-DUSE_ANDROID_GLES2)
@@ -87,12 +80,12 @@ macro(late_init)
 endmacro ()
 macro(add_plugin_libraries)
   # Add libraries required by this plugin
-  add_subdirectory("libs/tinyxml")
+  add_subdirectory("${CMAKE_SOURCE_DIR}/opencpn-libs/tinyxml")
   target_link_libraries(${PACKAGE_NAME} ocpn::tinyxml)
 
-  add_subdirectory("libs/plugingl")
-  target_link_libraries(${PACKAGE_NAME} ocpn::plugingl)
-
-  add_subdirectory("libs/jsoncpp")
+  add_subdirectory("${CMAKE_SOURCE_DIR}/opencpn-libs/jsoncpp")
   target_link_libraries(${PACKAGE_NAME} ocpn::jsoncpp)
+
+  add_subdirectory("${CMAKE_SOURCE_DIR}/opencpn-libs/plugin_dc")
+  target_link_libraries(${PACKAGE_NAME} ocpn::plugin-dc)
 endmacro ()
