@@ -11,9 +11,4 @@ extern void initialize_images(void);
 
 extern wxBitmap *_img_CanadianTides;
 
-#ifdef PLUGIN_USE_SVG
-extern wxString _svg_CanadianTides;
-extern wxString _svg_CanadianTides_toggled;
-#endif
-
 #endif /* ICONS_H */

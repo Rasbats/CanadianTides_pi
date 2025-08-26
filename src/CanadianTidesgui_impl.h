@@ -45,14 +45,16 @@
 #include "json/writer.h"
 
 #include "ocpn_plugin.h"
-#include "pidc.h"
-
 #include "TexFont.h"
+#include "pidc.h"
 
 
 #include <map>
 #include <list>
 #include <vector>
+#include <iostream>
+#include <string>
+#include <memory>
 
 #include "wx/defs.h"
 
@@ -63,7 +65,14 @@
 
 class PlugIn_ViewPort;
 class wxBoundingBox;
-class piDC;
+
+#ifdef __WXOSX__
+#define CANADIANTIDES_DLG_STYLE \
+  wxCLOSE_BOX | wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER | wxSTAY_ON_TOP
+#else
+#define CANADIANTIDES_DLG_STYLE \
+  wxCLOSE_BOX | wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER
+#endif
 
 using namespace std;
 
@@ -91,8 +100,11 @@ class TideTable;
 class Dlg : public DlgDef
 {
 public:
-	Dlg(CanadianTides_pi &_CanadianTides_pi, wxWindow* parent);
-	~Dlg();
+  Dlg(wxWindow* parent, wxWindowID id = wxID_ANY,
+      const wxString& title = _("CanadianTides"),
+      const wxPoint& pos = wxDefaultPosition,
+      const wxSize& size = wxDefaultSize, long style = CANADIANTIDES_DLG_STYLE);
+ 
 
 #ifdef __OCPN__ANDROID__
     void OnMouseEvent( wxMouseEvent& event );
@@ -115,7 +127,6 @@ public:
 		wxString m_default_configuration_path;
 		void AutoSizeHeader(wxListCtrl *const list_ctrl);
 
-		CanadianTides_pi &m_CanadianTides_pi;
 		wxString StandardPath();
 
 		list<myPort>myports;
@@ -128,13 +139,6 @@ public:
 		void DrawAllStationIcons(PlugIn_ViewPort *BBox, bool bRebuildSelList, bool bforce_redraw_icons, bool bdraw_mono_for_mask);
 		void DrawAllSavedStationIcons(PlugIn_ViewPort *BBox, bool bRebuildSelList,
 			bool bforce_redraw_icons, bool bdraw_mono_for_mask);
-		void DrawOLBitmap(const wxBitmap &bitmap, wxCoord x, wxCoord y, bool usemask);
-		void DrawGLLabels(Dlg *pof, wxDC *dc, PlugIn_ViewPort *vp,
-			wxImage &imageLabel, double myLat, double myLon, int offset);
-		wxImage &DrawGLTextString(wxString myText);
-
-		void DrawLine(double x1, double y1, double x2, double y2,
-			const wxColour &color, double width);
 
 		wxBitmap m_stationBitmap;
 
