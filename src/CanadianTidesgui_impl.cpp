@@ -409,7 +409,7 @@ void Dlg::OnDownload(wxCommandEvent &event) {
   wxFFile fileData;
 
   if (choiceRegion == "PAC")
-    fileData.Open(json_file, "r");
+    fileData.Open(json_file, "r" );
   else
     fileData.Open(tmp_file, "r");
   //
