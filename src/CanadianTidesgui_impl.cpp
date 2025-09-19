@@ -38,6 +38,8 @@
 #include <wx/glcanvas.h>
 #include <wx/graphics.h>
 #include "qtstylesheet.h"
+#include <iostream>
+#include <fstream>
 
 #ifdef __OCPN__ANDROID__
 wxWindow *g_Window;
@@ -377,59 +379,37 @@ void Dlg::OnDownload(wxCommandEvent &event) {
 
   wxString tmp_file = wxFileName::CreateTempFileName("");
 
-  wxString json_file;
-  if (choiceRegion == "PAC") {
-    wxString path = GetPluginDataDir("CanadianTides_pi");
-    wxString s = wxFileName::GetPathSeparator();
-    json_file = path + s + "data" + s + "PAC" + s + "pac_stations.json";
-    // wxMessageBox(json_file);
-  } else {
-    _OCPN_DLStatus ret =
-        OCPN_downloadFile(url.BuildURI(), tmp_file, "CanadianTides", "",
-                          wxNullBitmap, this, OCPN_DLDS_AUTO_CLOSE, 10);
+  _OCPN_DLStatus ret =
+      OCPN_downloadFile(url.BuildURI(), tmp_file, "CanadianTides", "",
+                        wxNullBitmap, this, OCPN_DLDS_AUTO_CLOSE, 10);
 
-    if (ret == OCPN_DL_ABORTED) {
-      m_stUKDownloadInfo->SetLabel(_("Aborted"));
-      return;
-    } else
+  if (ret == OCPN_DL_ABORTED) {
+    m_stUKDownloadInfo->SetLabel(_("Aborted"));
+    return;
+  } else
 
-        if (ret == OCPN_DL_FAILED) {
-      wxMessageBox(_("Download failed.\n\nAre you connected to the Internet?"));
+      if (ret == OCPN_DL_FAILED) {
+    wxMessageBox(_("Download failed.\n\nAre you connected to the Internet?"));
 
-      m_stUKDownloadInfo->SetLabel(_("Failed"));
-      return;
-    }
-
-    else {
-      m_stUKDownloadInfo->SetLabel(_("Success"));
-    }
+    m_stUKDownloadInfo->SetLabel(_("Failed"));
+    return;
   }
-  wxString message_body;
-  string m;
-  wxFFile fileData;
 
-  if (choiceRegion == "PAC")
-    fileData.Open(json_file, "r" );
-  else
-    fileData.Open(tmp_file, "r");
-  //
-  fileData.ReadAll(&message_body);
-  fileData.Close();
+  else {
+    m_stUKDownloadInfo->SetLabel(_("Success"));
+  }
 
-  // const char str[] = "ḵ";
+  Json::Value root;
+  std::ifstream ifs;
+  ifs.open(tmp_file.ToUTF8());
 
   Json::CharReaderBuilder builder{};
-
-  // Don't leak memory! Use std::unique_ptr!
-  auto reader = std::unique_ptr<Json::CharReader>(builder.newCharReader());
 
   wxString message_id;
   Json::Value value;
   string errors;
 
-  const auto parsingSuccessful = reader->parse(
-      message_body.c_str(), message_body.c_str() + message_body.length(),
-      &value, &errors);
+  const auto parsingSuccessful = parseFromStream(builder, ifs, &value, &errors);
 
   wxString error = _("No tidal stations found");
 
@@ -437,11 +417,6 @@ void Dlg::OnDownload(wxCommandEvent &event) {
     wxMessageBox(errors);
     wxLogMessage(error);
     return;
-  }
-
-  if (parsingSuccessful) {
-    // wxMessageBox("success");
-    // wxString ids = value[0]["id"].asString();
   }
 
   for (auto it = value.begin(); it != value.end(); ++it) {
@@ -457,7 +432,6 @@ void Dlg::OnDownload(wxCommandEvent &event) {
   }
 
   SetCanvasContextMenuItemViz(plugin->m_position_menu_id, true);
-  fileData.Close();
 
   b_clearSavedIcons = true;
   b_clearAllIcons = false;
